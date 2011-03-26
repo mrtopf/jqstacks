@@ -1,1 +1,45 @@
-testing
+<!doctype html>
+
+<html>
+    <head>
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="http://github.com/mrtopf/jqstacks/raw/master/jquery.stacks.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#stack").stacks({
+                    noon_click: function(e) {
+                        return $("#"+e.attr('rel'));
+                    },
+                });
+            });
+        </script>
+        <link type="text/stylesheet" rel="stylesheet" href="http://github.com/mrtopf/jqstacks/raw/master/example/style.css">
+    </head>
+    <body>
+        <div id="stack">
+            <div id="panels">
+                <div id="mainpanel" class="panel">
+                    <p>
+                        This is the main panel which e.g. contains some directory listing:
+                    </p>
+                    <ul>
+                        <li><a href="#" rel="panel-1">Folder 1</a></li>
+                        <li><a href="#" rel="panel-2">Folder 2</a></li>
+                    </ul>
+                </div>
+                <div id="panel-2" class="panel subpanel">
+                    <h2>Folder 2</h2>
+                    <ul>
+                        <li><a href="#" rel="panel-2-1">Folder 2/1</a></li>
+                    </ul>
+                    <a href="#" class="close">close</a>
+                </div>
+                <div id="panel-2-1" class="panel subpanel">
+                    <h2>Folder 2/1</h2>
+                    <a href="#" class="close">close</a>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
