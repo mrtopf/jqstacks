@@ -66,8 +66,14 @@ body {
   background: #f0f0f0;
 }
 
+/* line 10, src/style.scss */
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 /* the canvas */
-/* line 12, src/style.scss */
+/* line 17, src/style.scss */
 #stack {
   position: relative;
   overflow: hidden;
@@ -79,12 +85,12 @@ body {
   padding: 0;
 }
 
-/* line 23, src/style.scss */
+/* line 28, src/style.scss */
 #panels {
   position: absolute;
 }
 
-/* line 27, src/style.scss */
+/* line 32, src/style.scss */
 .panel {
   position: absolute;
   top: 0px;
@@ -104,7 +110,7 @@ body {
   border-radius: 4px;
 }
 
-/* line 38, src/style.scss */
+/* line 43, src/style.scss */
 #mainpanel {
   z-index: 200;
   left: 0px;
@@ -112,7 +118,7 @@ body {
   background: white;
 }
 
-/* line 45, src/style.scss */
+/* line 50, src/style.scss */
 .panel.subpanel {
   top: 0px;
   padding-left: 30px;

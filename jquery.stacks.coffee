@@ -40,7 +40,20 @@ class Stack
                     position: 'absolute'
                     'z-index': 100-level
                 })
-                new_panel.animate({left: final},conf.speed)
+
+                # check if we need to move the slider
+                s_l = that.slider.position().left
+                s_w = $(that.root).width()
+                s_r = s_l + s_w
+                np_w = new_panel.outerWidth()
+                if ((np_w+final) > s_r) 
+                    diff = (np_w+final) - s_r + conf.padding
+                    that.slider.animate({left: -diff}, conf.speed, () ->
+                        new_panel.animate({left: final},conf.speed)
+                    )
+                else
+                    console.log("ok")
+                    new_panel.animate({left: final},conf.speed)
                 that.initialize_panel(new_panel, level+1)
             )
         )

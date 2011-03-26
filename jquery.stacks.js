@@ -25,7 +25,7 @@
       var rel;
       rel = $(link).attr("rel");
       return $(link).click(function() {
-        var final, initial, l, new_panel, new_panel_width, panel_width;
+        var diff, final, initial, l, new_panel, new_panel_width, np_w, panel_width, s_l, s_r, s_w;
         new_panel = $("#" + rel);
         panel_width = panel.outerWidth();
         new_panel_width = new_panel.width();
@@ -38,9 +38,25 @@
           position: 'absolute',
           'z-index': 100 - level
         });
-        new_panel.animate({
-          left: final
-        }, conf.speed);
+        s_l = that.slider.position().left;
+        s_w = $(that.root).width();
+        s_r = s_l + s_w;
+        np_w = new_panel.outerWidth();
+        if ((np_w + final) > s_r) {
+          diff = (np_w + final) - s_r + conf.padding;
+          that.slider.animate({
+            left: -diff
+          }, conf.speed, function() {
+            return new_panel.animate({
+              left: final
+            }, conf.speed);
+          });
+        } else {
+          console.log("ok");
+          new_panel.animate({
+            left: final
+          }, conf.speed);
+        }
         return that.initialize_panel(new_panel, level + 1);
       });
     });
