@@ -52,7 +52,6 @@
             }, conf.speed);
           });
         } else {
-          console.log("ok");
           new_panel.animate({
             left: final
           }, conf.speed);

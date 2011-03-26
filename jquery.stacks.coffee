@@ -52,7 +52,6 @@ class Stack
                         new_panel.animate({left: final},conf.speed)
                     )
                 else
-                    console.log("ok")
                     new_panel.animate({left: final},conf.speed)
                 that.initialize_panel(new_panel, level+1)
             )
