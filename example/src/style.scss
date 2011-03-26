@@ -1,0 +1,55 @@
+@import "compass/reset";
+@import "compass/css3";
+
+body {
+    margin: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+/* the canvas */
+
+#stack {
+    position: relative;
+    overflow: hidden;
+    width: 900px;
+    height: 600px;
+    background: #e0e0e0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#panels {
+    position: absolute;
+}
+
+.panel {
+    position: absolute;
+    top: 0px;
+    padding: 10px;
+    height: 580px;
+    width: 400px;
+    display: none;
+    @include box-shadow(rgba(0,0,0,0.3) 2px 2px 3px);
+    @include border-radius(4px);
+}
+
+#mainpanel {
+    z-index: 200;
+    left: 0px;
+    width: 400px;
+    background: white;
+}
+
+.panel.subpanel {
+    top: 0px;
+    padding-left: 30px;
+    width: 400px;
+    background: #ccc;
+}
+
+
+
+
+
